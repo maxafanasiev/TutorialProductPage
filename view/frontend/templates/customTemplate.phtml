@@ -1,4 +1,31 @@
-<h1> <?php if($block->isAvailable())
-    {
-    ?><h2>It is a super original custom text!</h2><?php
-    }?> </h1>
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * @var $block \Magento\Theme\Block\Html\Title
+ */
+$cssClass = $block->getCssClass() ? ' ' . $block->getCssClass() : '';
+$titleHtml = '';
+if (trim($block->getPageHeading())) {
+    $titleHtml = '<span class="base" data-ui-id="page-title-wrapper" '
+        . $block->getAddBaseAttribute()
+        . '>'
+        . $block->escapeHtml($block->getPageHeading())
+        . '</span>';
+}
+?>
+<?php if ($titleHtml) : ?>
+    <div class="page-title-wrapper<?= $block->escapeHtmlAttr($cssClass) ?>" style="font-style: italic; color: orange ">
+        <h1 class="page-title"
+            <?php if ($block->getId()) : ?> id="<?= $block->escapeHtmlAttr($block->getId()) ?>" <?php endif; ?>
+            <?php if ($block->getAddBaseAttributeAria()) : ?>
+                aria-labelledby="<?= $block->escapeHtmlAttr($block->getAddBaseAttributeAria()) ?>"
+            <?php endif; ?> >
+            <?= /* @noEscape */ $titleHtml ?>
+        </h1>
+        <?= $block->getChildHtml() ?>
+    </div>
+<?php endif; ?>
