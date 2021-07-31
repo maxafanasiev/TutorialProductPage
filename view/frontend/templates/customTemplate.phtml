@@ -18,8 +18,8 @@ if (trim($block->getPageHeading())) {
 }
 ?>
 <?php if ($titleHtml) : ?>
-    <div class="page-title-wrapper<?= $block->escapeHtmlAttr($cssClass) ?>" style="font-style: italic; color: orange ">
-        <h1 class="page-title"
+    <div class="page-title-wrapper<?= $block->escapeHtmlAttr($cssClass) ?>" >
+        <h1 class="page-title" style="font-style: italic; color: orange "
             <?php if ($block->getId()) : ?> id="<?= $block->escapeHtmlAttr($block->getId()) ?>" <?php endif; ?>
             <?php if ($block->getAddBaseAttributeAria()) : ?>
                 aria-labelledby="<?= $block->escapeHtmlAttr($block->getAddBaseAttributeAria()) ?>"
