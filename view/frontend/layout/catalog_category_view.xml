@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<body>
+    <referenceBlock name="category.products.list" template="Perspective_TutorialProductPage::list.phtml"/>
+    <referenceBlock name="category.products.list">
+        <block class="Magento\Catalog\Block\Product\View" name="product.info.addto" as="addto" template="Magento_Catalog::product/view/addto.phtml">
+            <block class="Magento\Catalog\Block\Product\View\AddTo\Compare" name="view.addto.compare" after="view.addto.wishlist"
+                   template="Magento_Catalog::product/view/addto/compare.phtml" >
+                <arguments>
+                    <argument name="addToCompareViewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\Checker\AddToCompareAvailability</argument>
+                </arguments>
+            </block>
+        </block>
+    </referenceBlock>
+</body>

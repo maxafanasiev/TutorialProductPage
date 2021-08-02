@@ -13,9 +13,20 @@
               destination="page.main.title"
               after="customPageTitle"/>
 
-        <referenceBlock name="product.info.form.options">
+        <referenceBlock name="page.main.title">
             <block
-            name="product.price.final.custom"/>
+                    name="customBuyMeBlock"
+                    class="Perspective\TutorialProductPage\Block\Buyme"
+                    template="Perspective_TutorialProductPage::buyme.phtml"
+                    after="customPageTitle"
+                    before="product.info.addto"
+            />
+        </referenceBlock>
+
+        <referenceBlock name="product.info">
+            <arguments>
+                <argument name="add_base_attribute" xsi:type="string">style="display:flex"</argument>
+            </arguments>
         </referenceBlock>
     </body>
 </page>
