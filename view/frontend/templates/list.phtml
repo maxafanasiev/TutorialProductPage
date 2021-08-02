@@ -71,6 +71,11 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                                 </a>
                                 <h4>Buy me!</h4>
                             </strong>
+                            <div data-role="add-to-links" class="actions-secondary" style="display: grid"<?= strpos($pos, $viewMode . '-secondary') ? $block->escapeHtmlAttr($position) : '' ?>>
+                                <?php if ($addToBlock = $block->getChildBlock('addto')) :?>
+                                    <?= $addToBlock->setProduct($_product)->getChildHtml() ?>
+                                <?php endif; ?>
+                            </div>
                             <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
                             <?= /* @noEscape */ $block->getProductPrice($_product) ?>
                             <?= $block->getProductDetailsHtml($_product) ?>
@@ -104,11 +109,7 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div data-role="add-to-links" class="actions-secondary"<?= strpos($pos, $viewMode . '-secondary') ? $block->escapeHtmlAttr($position) : '' ?>>
-                                        <?php if ($addToBlock = $block->getChildBlock('addto')) :?>
-                                            <?= $addToBlock->setProduct($_product)->getChildHtml() ?>
-                                        <?php endif; ?>
-                                    </div>
+
                                 </div>
                                 <?php if ($showDescription) :?>
                                     <div class="product description product-item-description">
