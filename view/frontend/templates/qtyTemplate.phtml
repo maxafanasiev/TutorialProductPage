@@ -1,8 +1,6 @@
 <?php
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');//get current product
+$product = $block->getCurrentProduct();
 
-$productQty = $block->getStockItem($product->getEntityId())->getQty();
-
-    ?>
-    <h4>Quantity : <?php echo $productQty;?></h4>
+$productStockInfo = $block->getStockInformation($product->getEntityId());
+?>
+<h4>Quantity : <?php echo $productStockInfo->getQty();?></h4>

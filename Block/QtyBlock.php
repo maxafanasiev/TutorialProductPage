@@ -34,6 +34,10 @@ class QtyBlock extends \Magento\Framework\View\Element\Template
     {
         return $this->registry->registry('current_product');
     }
-}
 
-?>
+    public function getStockInformation($productId)
+    {
+        $productStockInfo = $this->_stockItemRepository->get($productId);
+        return $productStockInfo;
+    }
+}
