@@ -2,8 +2,6 @@
 
 namespace Perspective\TutorialProductPage\Block;
 
-use Magento\Catalog\Model\ProductRender;
-
 class QtyBlock extends \Magento\Framework\View\Element\Template
 {
 
