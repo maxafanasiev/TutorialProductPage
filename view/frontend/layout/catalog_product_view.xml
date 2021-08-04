@@ -2,12 +2,6 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <move element="product.info.sku"
-              destination="product.info.main"
-              before="product.info"/>
-        <move element="product.info.type"
-              destination="product.info.main"
-              before="product.info"/>
 
         <move element="product.info.addto"
               destination="page.main.title"
@@ -22,6 +16,15 @@
                     before="product.info.addto"
             />
         </referenceBlock>
+        <referenceBlock name="product.info.stock.sku">
+            <block
+                    name="QtyBlock"
+                    class="Perspective\TutorialProductPage\Block\QtyBlock"
+                    template="Perspective_TutorialProductPage::qtyTemplate.phtml"
+                    before="product.info.sku"
+            />
+        </referenceBlock>
+
 
         <referenceBlock name="product.info">
             <arguments>
