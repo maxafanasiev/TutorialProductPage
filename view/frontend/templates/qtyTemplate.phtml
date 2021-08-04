@@ -1,6 +1,4 @@
 <?php
-$product = $block->getCurrentProduct();
-
-$productStockInfo = $block->getStockInformation($product->getEntityId());
+$productStockInfo = $block->getStockInformation($block->getCurrentProduct()->getEntityId());
 ?>
-<h4>Quantity : <?php echo $productStockInfo->getQty();?></h4>
+<h4>Quantity : <?= $productStockInfo->getQty(); ?></h4>
