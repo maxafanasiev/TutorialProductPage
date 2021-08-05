@@ -19,10 +19,13 @@
         <referenceBlock name="product.info.stock.sku">
             <block
                     name="QtyBlock"
-                    class="Perspective\TutorialProductPage\Block\QtyBlock"
                     template="Perspective_TutorialProductPage::qtyTemplate.phtml"
                     before="product.info.sku"
-            />
+            >
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Perspective\TutorialProductPage\ViewModel\QtyViewModel</argument>
+                </arguments>
+            </block>
         </referenceBlock>
 
 
