@@ -1,5 +1,5 @@
 <?php
-/**@var Perspective\TutorialProductPage\ViewModel\QtyViewModel $viewModel*/
-$viewModel = $block->getData('view_model');
+/**@var $viewModel Perspective\TutorialProductPage\ViewModel\QtyViewModel*/
+$viewModel = $block->getViewModel();
 ?>
 <h4>Quantity : <?= $viewModel->getCurrentProductStock()->getQty() ?></h4>

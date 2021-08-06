@@ -2,9 +2,7 @@
 
 namespace Perspective\TutorialProductPage\ViewModel;
 
-use Magento\Framework\View\Element\Template;
-
-class QtyViewModel extends Template implements \Magento\Framework\View\Element\Block\ArgumentInterface
+class QtyViewModel implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
     /**
      * @var $stockItemRepository
@@ -14,12 +12,9 @@ class QtyViewModel extends Template implements \Magento\Framework\View\Element\B
     protected $registry;
 
     public function __construct(
-        Template\Context $context,
         \Magento\CatalogInventory\Api\StockItemRepositoryInterface $stockItemRepository,
-        \Magento\Framework\Registry                                $registry,
-        array $data = []
+        \Magento\Framework\Registry                                $registry
     ) {
-        parent::__construct($context, $data);
         $this->stockItemRepository = $stockItemRepository;
         $this->registry = $registry;
     }
